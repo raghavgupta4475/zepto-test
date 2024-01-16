@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #bebebe;
+  border-radius: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.application {
   display: flex;
-  flex-direction: column;
+  border-bottom: 3px solid blue;
+  margin: 30px 20% 0 20%;
+  min-height: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+
+.search-box {
+  border: none;
+  flex-grow: 1;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: none;
+}
+
+.search-box {
+  width: auto;
+  position: relative;
+}
+
+.list-container {
+  width: fit-content;
+  display: grid;
+  max-height: 150px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 35px;
+  min-width: min(500px, 50vw);
+  box-shadow: 2px 2px 2px 2px lightgrey;
+  border-radius: 10px;
+}
+
+.list-container__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 5fr;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.email {
+  font-size: 0.8em;
+}
+
+.name {
+  font-size: 0.8em;
+  font-weight: 500;
+  padding-right: 20px;
+
+}
+
+.list-container__item:hover {
+  background-color: #EDEDED;
+}
+
+.list-container__item .avatar,
+.application__chip .avatar {
+  border-radius: 50%;
+  text-align: center;
+  height: 28px;
+  width: 28px;
+}
+
+
+.application__chip {
+  border-radius: 25px;
+  background-color: #DFDFDF;
+  display: flex;
+  gap: 5px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.application__chip p {
+  font-family: 'Times New Roman', Times, serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cancel-button {
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+}
+
+.application__chip--blue {
+  border: 2px solid blue;
 }
